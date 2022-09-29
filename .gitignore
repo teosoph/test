@@ -9,6 +9,8 @@ allure-report/**
 allure-results/**
 reports/**
 
+docs/**
+
 
 screenshots/**
 
