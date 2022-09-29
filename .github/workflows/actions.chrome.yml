@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: "18.x"
       - name: install Google Chrome
-        run: sudo apt-get install -y google-chrome-unstable
+        run: sudo apt-get install -y google-chrome-beta
 
       - name: Install all dependencies
         run: npm install
