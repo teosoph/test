@@ -11,6 +11,9 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "18.x"
+      - name: install Google Chrome
+        apt: pkg=google-chrome-stable state=installed update_cache=yes
+        sudo: yes
       - name: Install all dependencies
         run: npm install
       - name: Run tests
