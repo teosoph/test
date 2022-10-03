@@ -1,4 +1,4 @@
-const CommonPage = require("../pageobjects/common.page");
+const CommonPage = require("./common.page");
 
 class LogIn {
   // TC-016
@@ -18,7 +18,7 @@ class LogIn {
     return $('(//button[contains(text(), "Log in")])[2]');
   }
   async click__logInButton() {
-    await this.button__logIn.waitForClickable({ timeout: 10000 });
+    await this.button__logIn.waitForClickable({ timeout: 20000 });
     await this.button__logIn.click();
   }
   async check__successfulLogOut() {

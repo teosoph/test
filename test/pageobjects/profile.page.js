@@ -1,4 +1,4 @@
-const CommonPage = require("../pageobjects/common.page");
+const CommonPage = require("./common.page");
 
 class ProfilePage {
   get popUp__infoModal() {
@@ -95,11 +95,13 @@ class ProfilePage {
   }
   async click__button__outboundVoiceProfilesStatus() {
     await this.button__outboundVoiceProfilesStatus.click();
+    await browser.pause(5000);
   }
   get message__popupStatusChanged() {
-    return $('//span[contains(text(), "Updated Outbound Voice")]');
+    return $('//*[contains(text(), "Updated Outbound Voice")]');
   }
   async check__message__popupStatusChanged() {
+    // await browser.getAlertText("Updated Outbound Voice");
     await expect(this.message__popupStatusChanged).toHaveTextContaining("Updated Outbound Voice");
   }
 }

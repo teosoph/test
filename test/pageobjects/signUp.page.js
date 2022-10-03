@@ -1,4 +1,4 @@
-const CommonPage = require("../pageobjects/common.page");
+const CommonPage = require("./common.page");
 
 class SignUpPage {
   // TC-001, TC-002

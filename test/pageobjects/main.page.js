@@ -1,4 +1,4 @@
-const Page = require("../pageobjects/page");
+const Page = require("./page");
 
 class MainPage {
   // Open main page
