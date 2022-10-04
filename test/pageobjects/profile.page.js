@@ -98,11 +98,15 @@ class ProfilePage {
     await browser.pause(5000);
   }
   get message__popupStatusChanged() {
-    return $('//*[contains(text(), "Updated Outbound Voice")]');
+    return $("div[type='success'] span");
   }
   async check__message__popupStatusChanged() {
     // await browser.getAlertText("Updated Outbound Voice");
     await expect(this.message__popupStatusChanged).toHaveTextContaining("Updated Outbound Voice");
+  }
+
+  async getElementText() {
+    return await $("div[type='success'] span").getText();
   }
 }
 
