@@ -9,9 +9,6 @@ RUN apt-get install -y firefox-esr
 RUN firefox -v
 #these change rarely, as they depend on our tests
 COPY config/ ./tests/config
-COPY environments/ ./tests/environments
-COPY helper/ ./tests/helper
-COPY resources/ ./tests/resources
 COPY test/ ./tests/test
 COPY package.json ./tests/package.json
 WORKDIR ./tests
@@ -19,3 +16,4 @@ WORKDIR ./tests
 RUN npm i -g npm@latest
 RUN npm i npm@latest
 RUN npm install
+RUN npm run test:firefox:headless

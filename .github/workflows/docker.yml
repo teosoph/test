@@ -1,0 +1,13 @@
+name: Tests in Docker container
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build container from Dockerfile
+        run: docker build . --file Dockerfile --tag teosophh-telnyx-wdio-allure
+      - name: Run tests in container
+        run: docker run teosophh-telnyx-wdio-allure

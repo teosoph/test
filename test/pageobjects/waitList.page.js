@@ -61,14 +61,14 @@ class WaitListPage {
   get message__wagningEmail() {
     return $(`[id="ValidMsgEmail"]`);
   }
-  //   async check__wagningEmailMessage() {
-  //     await expect(this.message__wagningEmail).toHaveTextContaining("Must be valid email");
-  //   }
   async check__wagningEmailMessage() {
-    if (await this.message__wagningEmail.isDisplayed()) {
-      (await expect(this.message__wagningEmail).toHaveTextContaining("Invalid Input")) || (await expect(this.message__wagningEmail).toHaveTextContaining("Must be valid email"));
-    }
+    await expect(this.message__wagningEmail).toHaveTextContaining("Must be valid email");
   }
+  // async check__wagningEmailMessage() {
+  //   if (await this.message__wagningEmail.isDisplayed()) {
+  //     (await expect(this.message__wagningEmail).toHaveTextContaining("Invalid Input")) || (await expect(this.message__wagningEmail).toHaveTextContaining("Must be valid email"));
+  //   }
+  // }
 }
 
 module.exports = new WaitListPage();

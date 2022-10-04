@@ -80,6 +80,14 @@ class ProfilePage {
   }
 
   //   TC-020
+
+  get tab__menuVoice() {
+    return $('(//button[contains(text(), "Voice")])[2]');
+  }
+  async click__tab__menuVoice() {
+    await this.tab__menuVoice.click();
+  }
+
   get tab__menuOutboundVoiceProfiles() {
     return $('(//a[contains(@href, "/#/app/outbound-profiles")])[2]');
   }
